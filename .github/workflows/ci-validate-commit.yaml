@@ -28,7 +28,7 @@ jobs:
       - name: Validate each commit
         run: |
           # Loop through each commit in the PR from oldest to newest
-          for commit in $(git rev-list --reverse ${{ github.event.before }}..${{ github.sha }}); do
+          for commit in $(git rev-list --reverse ${{ github.event.pull_request.base.sha }}..${{ github.sha }}); do
             echo "========================================="
             echo "Checking out commit $commit..."
             git checkout $commit
