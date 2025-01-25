@@ -38,7 +38,7 @@ func main() {
 	kg.Printf("Need to have root privileges to run %s\n", os.Args[0])
 	if os.Geteuid() != 0 {
 		if os.Getenv("KUBEARMOR_UBI") == "" {
-			kg.Printf("Need to have root privileges to run %s\n", os.Args[0])
+			kg.Printf("Need to have root privileges to run %s\n", os.Args[0]
 			return
 		}
 	}
